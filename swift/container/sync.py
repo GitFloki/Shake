@@ -34,6 +34,7 @@ from swift.common.http import HTTP_UNAUTHORIZED, HTTP_NOT_FOUND
 
 
 class ContainerSync(Daemon):
+
     """
     Daemon to sync syncable containers.
 
