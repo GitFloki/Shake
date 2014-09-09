@@ -1134,13 +1134,16 @@ class ContainerBroker(DatabaseBroker):
                 # We have a delimiter and a prefix (possibly empty string) to
                 # handle
                 rowcount = 0
+                
                 for row in curs:
                     rowcount += 1
                     marker = name = row[0]
+                    
                     if len(results) >= limit or not name.startswith(prefix):
                         curs.close()
                         return results
                     end = name.find(delimiter, len(prefix))
+                    
                     if path is not None:
                         if name == path:
                             continue
@@ -1148,6 +1151,7 @@ class ContainerBroker(DatabaseBroker):
                             marker = name[:end] + chr(ord(delimiter) + 1)
                             curs.close()
                             break
+                    
                     elif end > 0:
                         marker = name[:end] + chr(ord(delimiter) + 1)
                         # we want result to be inclusinve of delim+1
