@@ -31,13 +31,16 @@ class Daemon(object):
         self.conf = conf
         self.logger = utils.get_logger(conf, log_route='daemon')
 
+
     def run_once(self, *args, **kwargs):
         """Override this to run the script once"""
         raise NotImplementedError('run_once not implemented')
 
+
     def run_forever(self, *args, **kwargs):
         """Override this to run forever"""
         raise NotImplementedError('run_forever not implemented')
+
 
     def run(self, once=False, **kwargs):
         """Run the daemon"""
