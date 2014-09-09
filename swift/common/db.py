@@ -14,7 +14,7 @@
 # limitations under the License.
 
 """ Database code for Swift """
-
+"""hello, everyone"""
 from __future__ import with_statement
 from contextlib import contextmanager, closing
 import hashlib
